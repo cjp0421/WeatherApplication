@@ -91,7 +91,7 @@ function handleSubmit(event) {
   let city = document.querySelector("#city-input").value;
   searchForCity(city);
 }
-//HOW IS IT POSSIBLE FOR LATITUDE TO BE UNDEFINED?
+
 function searchLocation(position) {
   let apiKey = "0ceb0fe04d38447f14a2f5f039cc2bdf";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=imperial`;
@@ -120,15 +120,23 @@ search("New York");
 
 //button that shows temperature in C
 
-function getCelsiusDegrees(event) {
+function changeDegeeUnits(event) {
   event.preventDefault()
   let units = document.querySelector("#degreeUnits");
-  let celsiusTemp = document.querySelector("#currentTemper");
-    let city = document.querySelector("#city-input").value;
-  let apiKey = `0ceb0fe04d38447f14a2f5f039cc2bdf`;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayWeatherCondition);
+  units.innerHTML = `°C`;
+  getCelsiusTemperature();
 }
 
 let celsiusButton = document.querySelector("#celsiusWeatherButton");
 celsiusButton.addEventListener("click", getCelsiusDegrees);
+
+function getCelsiusTemperature(response){
+  let celsiusTemp = document.querySelector("#currentTemper");
+  let city = document.querySelector("#city-input").value;
+  let apiKey = `0ceb0fe04d38447f14a2f5f039cc2bdf`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  city.innerHTML = response.data.name;
+  celsiusTemp.innerHTML = Math.round(
+    response.data.main.temp
+  axios.get(apiUrl).then(displayWeatherCondition);
+}
