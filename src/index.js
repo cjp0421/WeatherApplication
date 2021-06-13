@@ -135,7 +135,7 @@ function getCelsiusTemperature(response){
   city.innerHTML = response.data.name;
   celsiusTemp.innerHTML = Math.round(response.data.main.temp);
   axios.get(apiUrl).then(changeDegreeUnits);
-  changeDegreeUnits
+  changeDegreeUnits();
 }
 
 let celsiusButton = document.querySelector("#celsiusWeatherButton");
