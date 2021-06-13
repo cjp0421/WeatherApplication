@@ -179,3 +179,10 @@ label {
   padding: 1.5%;
 border-radius: 50px 50px 50px 50px / 40px 40px 40px 40px;
 }
+
+#currentConditions, #humidity, #windSpeed {
+  display: inline-block;
+  margin: 1%;
+  justify-content: justify;
+  width: 100%;
+}
