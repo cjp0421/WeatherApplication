@@ -136,7 +136,6 @@ function getCelsiusTemperature(response){
   let apiKey = `0ceb0fe04d38447f14a2f5f039cc2bdf`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   city.innerHTML = response.data.name;
-  celsiusTemp.innerHTML = Math.round(
-    response.data.main.temp
-  axios.get(apiUrl).then(displayWeatherCondition);
+  celsiusTemp.innerHTML = Math.round(response.data.main.temp);
+  axios.get(apiUrl).then(changeDegreeUnits);
 }
