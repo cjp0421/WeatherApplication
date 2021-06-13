@@ -128,7 +128,7 @@ function changeDegeeUnits(event) {
 }
 
 let celsiusButton = document.querySelector("#celsiusWeatherButton");
-celsiusButton.addEventListener("click", getCelsiusDegrees);
+celsiusButton.addEventListener("click", changeDegreeUnits);
 
 function getCelsiusTemperature(response){
   let celsiusTemp = document.querySelector("#currentTemper");
