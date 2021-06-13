@@ -166,8 +166,9 @@ label {
     -1px 13px 11px 12px rgba(0, 0, 0, 0.41);
 }
 
-#celsiusWeatherButton, #currentLocationButton:hover {
+#celsiusWeatherButton:hover, #currentLocationButton:hover {
   color: rgb(51, 37, 12);
+
 }
 
 #repositoryLink {
