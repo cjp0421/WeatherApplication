@@ -1,4 +1,6 @@
-import "./style.css";
+//import "./style.css";
+
+alert("hello");
 
 let days = [
   "Sunday",
