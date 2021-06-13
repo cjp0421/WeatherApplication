@@ -169,3 +169,12 @@ label {
 #celsiusWeatherButton, #currentLocationButton:hover {
   color: rgb(51, 37, 12);
 }
+
+#repositoryLink {
+  background-color: #ffffff;
+  margin: 0 auto;
+  margin-top: 5%;
+  margin-bottom: 3%;
+  padding: 1.5%;
+border-radius: 50px 50px 50px 50px / 40px 40px 40px 40px;
+}
