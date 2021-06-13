@@ -65,6 +65,31 @@ console.log(dateOfToday);
 
 //feature: puts city entered into search bar as the h1 header on
 //on Check Weather button click
+
+function displayWeatherConditionInCelsius(response) {
+  document.querySelector("#city").innerHTML = response.data.name;
+  document.querySelector("#currentTemper").innerHTML = Math.round(
+    response.data.main.temp
+  );
+  document.querySelector("#degreeUnits").innerHTML = `°C`;
+}
+
+function searchForCityInCelsius(event) {
+  event.preventDefault();
+  let apiKey = `0ceb0fe04d38447f14a2f5f039cc2bdf`;
+  let cityEntered = document.querySelector("#currentlocation").value;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityEntered}&appid=${apiKey}&units=metric`;
+
+  let cityDisplayed = document.querySelector("#city");
+  cityDisplayed.innerHTML = cityEntered;
+  axios.get(apiUrl).then(displayWeatherConditionInCelsius);
+}
+
+let searchCityCelsiusButton = document.querySelector("#celsiusWeatherButton");
+searchCityCelsiusButton.addEventListener("click", searchForCityInCelsius);
+
+
+
 function displayWeatherCondition(response) {
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#currentTemper").innerHTML = Math.round(
@@ -91,7 +116,7 @@ function handleSubmit(event) {
   let city = document.querySelector("#city-input").value;
   searchForCity(city);
 }
-
+//
 function searchLocation(position) {
   let apiKey = "0ceb0fe04d38447f14a2f5f039cc2bdf";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=imperial`;
@@ -118,25 +143,5 @@ function search(city) {
 
 search("New York");
 
-//button that shows temperature in C
 
-function changeDegeeUnits(event) {
-  event.preventDefault()
-  let units = document.querySelector("#degreeUnits");
-  units.innerHTML = `°C`;
-  getCelsiusTemperature();
-}
 
-function getCelsiusTemperature(response){
-  let celsiusTemp = document.querySelector("#currentTemper");
-  let city = document.querySelector("#city-input").value;
-  let apiKey = `0ceb0fe04d38447f14a2f5f039cc2bdf`;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  city.innerHTML = response.data.name;
-  celsiusTemp.innerHTML = Math.round(response.data.main.temp);
-  axios.get(apiUrl).then(changeDegreeUnits);
-  changeDegreeUnits();
-}
-
-let celsiusButton = document.querySelector("#celsiusWeatherButton");
-celsiusButton.addEventListener("click", getCelsiusTemperature);
