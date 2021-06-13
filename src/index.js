@@ -95,6 +95,7 @@ function displayWeatherCondition(response) {
   document.querySelector("#currentTemper").innerHTML = Math.round(
     response.data.main.temp
   );
+    document.querySelector("#degreeUnits").innerHTML = `°F`;
 }
 
 function searchForCity(event) {
