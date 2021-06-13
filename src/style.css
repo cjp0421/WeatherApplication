@@ -155,7 +155,7 @@ label {
   z-index: 1;
 }
 
-#celsiusWeather, #currentLocationButton {
+#celsiusWeatherButton, #currentLocationButton {
   background-color: rgba(16, 173, 194);
   color: rgba(163, 119, 38);
   display: block;
@@ -166,6 +166,6 @@ label {
     -1px 13px 11px 12px rgba(0, 0, 0, 0.41);
 }
 
-#celsiusWeather, #currentLocationButton:hover {
+#celsiusWeatherButton, #currentLocationButton:hover {
   color: rgb(51, 37, 12);
 }

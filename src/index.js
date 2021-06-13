@@ -120,4 +120,15 @@ search("New York");
 
 //button that shows temperature in C
 
+function getCelsiusDegrees(event) {
+  event.preventDefault()
+  let units = document.querySelector("#degreeUnits");
+  let celsiusTemp = document.querySelector("#currentTemper");
+    let city = document.querySelector("#city-input").value;
+  let apiKey = `0ceb0fe04d38447f14a2f5f039cc2bdf`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayWeatherCondition);
+}
 
+let celsiusButton = document.querySelector("#celsiusWeatherButton");
+celsiusButton.addEventListener("click", getCelsiusDegrees);
