@@ -127,9 +127,6 @@ function changeDegeeUnits(event) {
   getCelsiusTemperature();
 }
 
-let celsiusButton = document.querySelector("#celsiusWeatherButton");
-celsiusButton.addEventListener("click", changeDegreeUnits);
-
 function getCelsiusTemperature(response){
   let celsiusTemp = document.querySelector("#currentTemper");
   let city = document.querySelector("#city-input").value;
@@ -138,4 +135,8 @@ function getCelsiusTemperature(response){
   city.innerHTML = response.data.name;
   celsiusTemp.innerHTML = Math.round(response.data.main.temp);
   axios.get(apiUrl).then(changeDegreeUnits);
+  changeDegreeUnits
 }
+
+let celsiusButton = document.querySelector("#celsiusWeatherButton");
+celsiusButton.addEventListener("click", getCelsiusTemperature);
