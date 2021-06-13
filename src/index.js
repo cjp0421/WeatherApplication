@@ -117,3 +117,7 @@ function search(city) {
 }
 
 search("New York");
+
+//button that shows temperature in C
+
+
