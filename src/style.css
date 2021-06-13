@@ -131,12 +131,6 @@ label {
   height: vh100;
   z-index: -1;
 }
-#todayAgain {
-  display: flex;
-
-  justify-content: center;
-  width: 100%;
-}
 
 #temperaturesOfTheWeek {
   display: flex;
@@ -148,8 +142,8 @@ label {
 #mainheader {
   position: absolute;
   display: block;
-  top: 3%;
-  left: 4%;
+  top: 1.5%;
+  left: 3%;
   width: 30%;
   opacity: 1;
   z-index: 1;
