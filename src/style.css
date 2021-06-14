@@ -180,3 +180,8 @@ border-radius: 50px 50px 50px 50px / 40px 40px 40px 40px;
   justify-content: justify;
   width: 100%;
 }
+
+#currentlocation {
+  width: 50%;
+  margin: 0 auto;
+}
