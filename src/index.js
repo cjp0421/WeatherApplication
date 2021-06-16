@@ -136,11 +136,21 @@ searchForm.addEventListener("submit", handleSubmit);
 let currentLocationButton = document.querySelector("#currentLocationButton");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
+function displayWeatherDescriptionDefault(response) {
+  document.querySelector("#currentWeatherDescription").innerHTML = response.data.weather[0].description;
+
+}
+
 function search(city) {
   let apiKey = `0ceb0fe04d38447f14a2f5f039cc2bdf`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+
   axios.get(apiUrl).then(displayWeatherCondition);
+    axios.get(apiUrl).then(displayWeatherDescriptionDefault);
 }
+
+
+
 
 search("New York");
 
@@ -183,4 +193,4 @@ console.log(apiUrl);
 let searchWeatherConditionsCelsius = document.querySelector("#celsiusWeatherButton");
 searchWeatherConditionsCelsius.addEventListener("click", searchForCityWeatherDescription);
 
-//
+//adding weather description - current location button? having trouble with this?
