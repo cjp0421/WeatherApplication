@@ -179,6 +179,7 @@ border-radius: 50px 50px 50px 50px / 40px 40px 40px 40px;
   margin: 1%;
   justify-content: justify;
   width: 100%;
+  text-transform: capitalize;
 }
 
 #currentlocation {
