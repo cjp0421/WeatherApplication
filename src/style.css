@@ -24,10 +24,17 @@ h1 {
     -1px 13px 11px 12px rgba(0, 0, 0, 0.41);
 }
 
+p {
+  display: block;
+  flex-flow: row wrap;
+  width: 90%;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+}
+
 h2,
 h3,
-h4,
-p {
+h4 {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -120,7 +127,7 @@ label {
 }
 
 .card-img-top {
-  width: 40%;
+  width: 50%;
   padding: 3%;
 }
 
@@ -174,10 +181,16 @@ label {
 border-radius: 50px 50px 50px 50px / 40px 40px 40px 40px;
 }
 
-#currentConditions, #humidity, #windSpeed {
-  display: inline-block;
-  margin: 1%;
-  justify-content: justify;
+#currentConditions {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  width: 95%;
+}
+
+
+#currentWeatherDescription, #humidity, #windSpeed {
+  margin: 2%;
   width: 100%;
   text-transform: capitalize;
 }
