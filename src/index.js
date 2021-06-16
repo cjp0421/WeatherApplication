@@ -139,7 +139,7 @@ currentLocationButton.addEventListener("click", getCurrentLocation);
 
 function displayWeatherDescriptionDefault(response) {
   document.querySelector("#currentWeatherDescription").innerHTML = response.data.weather[0].description;
-
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
 }
 
 function search(city) {
@@ -157,11 +157,11 @@ search("New York");
 
 
 
-//Adding weather description - Fahrenheit Button
+//Adding weather description
 
 function displayWeatherDescription(response) {
   document.querySelector("#currentWeatherDescription").innerHTML = response.data.weather[0].description;
-
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
 }
 
 function searchForCityWeatherDescription(event) {
@@ -169,7 +169,7 @@ function searchForCityWeatherDescription(event) {
   let apiKey = `0ceb0fe04d38447f14a2f5f039cc2bdf`;
   let cityEntered = document.querySelector("#currentlocation").value;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityEntered}&appid=${apiKey}`;
-console.log(apiUrl);
+  console.log(apiUrl);
   axios.get(apiUrl).then(displayWeatherDescription);
 }
 
@@ -179,7 +179,7 @@ searchWeatherConditions.addEventListener("click", searchForCityWeatherDescriptio
 //adding weather description - Celsius Button
 function displayWeatherDescriptionCelsius(response) {
   document.querySelector("#currentWeatherDescription").innerHTML = response.data.weather[0].description;
-
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
 }
 
 function searchForCityWeatherDescriptionCelsius(event) {
@@ -187,11 +187,9 @@ function searchForCityWeatherDescriptionCelsius(event) {
   let apiKey = `0ceb0fe04d38447f14a2f5f039cc2bdf`;
   let cityEntered = document.querySelector("#currentlocation").value;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityEntered}&appid=${apiKey}`;
-console.log(apiUrl);
+  console.log(apiUrl);
   axios.get(apiUrl).then(displayWeatherDescriptionCelsius);
 }
 
 let searchWeatherConditionsCelsius = document.querySelector("#celsiusWeatherButton");
 searchWeatherConditionsCelsius.addEventListener("click", searchForCityWeatherDescription);
-
-//adding weather description - current location button? having trouble with this?
