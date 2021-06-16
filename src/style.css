@@ -52,7 +52,7 @@ h4 {
   font-weight: 800;
 }
 
-label {
+label, h5 {
   display: block;
   margin: 0 auto;
   text-align: center;
