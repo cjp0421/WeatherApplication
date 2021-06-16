@@ -162,5 +162,25 @@ console.log(apiUrl);
   axios.get(apiUrl).then(displayWeatherDescription);
 }
 
-let searchWeatherConditions = document.querySelector("#weatherButton",);
+let searchWeatherConditions = document.querySelector("#weatherButton");
 searchWeatherConditions.addEventListener("click", searchForCityWeatherDescription);
+
+//adding weather description - Celsius Button
+function displayWeatherDescriptionCelsius(response) {
+  document.querySelector("#currentWeatherDescription").innerHTML = response.data.weather[0].description;
+
+}
+
+function searchForCityWeatherDescriptionCelsius(event) {
+  event.preventDefault();
+  let apiKey = `0ceb0fe04d38447f14a2f5f039cc2bdf`;
+  let cityEntered = document.querySelector("#currentlocation").value;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityEntered}&appid=${apiKey}`;
+console.log(apiUrl);
+  axios.get(apiUrl).then(displayWeatherDescriptionCelsius);
+}
+
+let searchWeatherConditionsCelsius = document.querySelector("#celsiusWeatherButton");
+searchWeatherConditionsCelsius.addEventListener("click", searchForCityWeatherDescription);
+
+//
