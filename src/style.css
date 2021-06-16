@@ -75,17 +75,6 @@ label {
   margin: 2%;
 }
 
-
-.checkWeather {
-  background-color: rgba(16, 173, 194);
-  color: rgba(163, 119, 38);
-  display: block;
-  margin: 0 auto;
-  font-weight: 800;
-  box-shadow: 0px 10px 13px -7px #000000,
-    -1px 13px 11px 12px rgba(0, 0, 0, 0.41);
-}
-
 .currentTemp {
   display: block;
   margin: 0 auto;
@@ -164,19 +153,21 @@ label {
   z-index: 1;
 }
 
-#celsiusWeatherButton, #currentLocationButton {
+#celsiusWeatherButton, #currentLocationButton, #weatherButton {
   background-color: rgba(16, 173, 194);
   color: rgba(163, 119, 38);
   display: block;
   margin: 0 auto;
-  margin-bottom: 5%;
+  margin-bottom: 3%;
   font-weight: 800;
   box-shadow: 0px 10px 13px -7px #000000,
     -1px 13px 11px 12px rgba(0, 0, 0, 0.41);
+      transition: 400ms ease-in-out;
 }
 
-#celsiusWeatherButton:hover, #currentLocationButton:hover {
+#celsiusWeatherButton:hover, #currentLocationButton:hover, #weatherButton:hover {
   color: rgb(51, 37, 12);
+  transform: scale(1.1);
 
 }
 
