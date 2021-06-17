@@ -72,6 +72,7 @@ function displayWeatherConditionInCelsius(response) {
     response.data.main.temp
   );
   document.querySelector("#degreeUnits").innerHTML = `°C`;
+  document.querySelector("#windUnits").innerHTML = `m/s`;
 }
 
 function searchForCityInCelsius(event) {
@@ -96,6 +97,7 @@ function displayWeatherCondition(response) {
     response.data.main.temp
   );
     document.querySelector("#degreeUnits").innerHTML = `°F`;
+    document.querySelector("#windUnits").innerHTML = `mph`;
 }
 
 function searchForCity(event) {
@@ -140,12 +142,12 @@ currentLocationButton.addEventListener("click", getCurrentLocation);
 function displayWeatherDescriptionDefault(response) {
   document.querySelector("#currentWeatherDescription").innerHTML = response.data.weather[0].description;
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+    document.querySelector("#windSpeed").innerHTML = response.data.wind.speed;
 }
 
 function search(city) {
   let apiKey = `0ceb0fe04d38447f14a2f5f039cc2bdf`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
-
   axios.get(apiUrl).then(displayWeatherCondition);
     axios.get(apiUrl).then(displayWeatherDescriptionDefault);
 }
@@ -162,6 +164,7 @@ search("New York");
 function displayWeatherDescription(response) {
   document.querySelector("#currentWeatherDescription").innerHTML = response.data.weather[0].description;
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+    document.querySelector("#windSpeed").innerHTML = response.data.wind.speed;
 }
 
 function searchForCityWeatherDescription(event) {
@@ -180,6 +183,7 @@ searchWeatherConditions.addEventListener("click", searchForCityWeatherDescriptio
 function displayWeatherDescriptionCelsius(response) {
   document.querySelector("#currentWeatherDescription").innerHTML = response.data.weather[0].description;
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+      document.querySelector("#windSpeed").innerHTML = response.data.wind.speed;
 }
 
 function searchForCityWeatherDescriptionCelsius(event) {
