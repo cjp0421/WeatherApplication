@@ -188,7 +188,7 @@ border-radius: 50px 50px 50px 50px / 40px 40px 40px 40px;
 }
 
 
-#currentWeatherDescription, #humidity, #windSpeed {
+#currentWeatherDescription, #humidity, #windSpeed, #city {
   margin: 2%;
   width: 100%;
   text-transform: capitalize;
