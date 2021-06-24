@@ -147,5 +147,5 @@ searchWeatherConditionsFahrenheit.addEventListener(
   "click",
   searchForCityInFahrenheit
 );
-let citySearched = "";
+let citySearched = null;
 search("New York");
