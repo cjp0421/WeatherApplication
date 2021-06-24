@@ -61,7 +61,8 @@ document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#windUnits").innerHTML = `m/s`;
     let weatherIcon = document.querySelector("#icon");
   weatherIcon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
-
+  document.querySelector("#currentWeatherDescription").innerHTML =
+    response.data.weather[0].description;
 }
 
 function searchForCityInCelsius(event) {
@@ -111,13 +112,16 @@ searchForm.addEventListener("submit", handleSubmit);
 let currentLocationButton = document.querySelector("#currentLocationButton");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 function search(city) {
+  
   let apiKey = `0ceb0fe04d38447f14a2f5f039cc2bdf`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayWeatherCondition);
 }
 
 function displayWeatherConditionInFahrenheit(response) {
-    let citySearched = document.querySelector("#currentlocation").value;
+     document.querySelector("#currentWeatherDescription").innerHTML =
+    response.data.weather[0].description;
+  let citySearched = document.querySelector("#currentlocation").value;
     document.querySelector("#city").innerHTML = citySearched;
   document.querySelector("#currentTemper").innerHTML = Math.round(
     response.data.main.temp
