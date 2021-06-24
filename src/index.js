@@ -47,9 +47,11 @@ let time = document.querySelector("#currentTime");
 time.innerHTML = currentTime;
 let dateOfToday = document.querySelector("#todaysDate");
 console.log(dateOfToday);
+
 //feature: puts city entered into search bar as the h1 header on
 //on Check Weather button click
 function displayWeatherConditionInCelsius(response) {
+document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#currentTemper").innerHTML = Math.round(
     response.data.main.temp
   );
@@ -57,15 +59,21 @@ function displayWeatherConditionInCelsius(response) {
   document.querySelector("#windSpeed").innerHTML = response.data.wind.speed;
   document.querySelector("#degreeUnits").innerHTML = `°C`;
   document.querySelector("#windUnits").innerHTML = `m/s`;
+    let weatherIcon = document.querySelector("#icon");
+  weatherIcon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
+
 }
+
 function searchForCityInCelsius(event) {
   event.preventDefault();
+  let citySearched = document.querySelector("#currentlocation").value;
   let apiKey = `0ceb0fe04d38447f14a2f5f039cc2bdf`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${citySearched}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeatherConditionInCelsius);
 }
 let searchCityCelsiusButton = document.querySelector("#celsiusWeatherButton");
 searchCityCelsiusButton.addEventListener("click", searchForCityInCelsius);
+
 function displayWeatherCondition(response) {
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#currentTemper").innerHTML = Math.round(
@@ -77,7 +85,7 @@ function displayWeatherCondition(response) {
     response.data.weather[0].description;
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#windSpeed").innerHTML = response.data.wind.speed;
-  citySearched = response.data.name;
+
   let weatherIcon = document.querySelector("#icon");
   weatherIcon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
 }
@@ -97,6 +105,7 @@ function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
+
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
 let currentLocationButton = document.querySelector("#currentLocationButton");
@@ -106,9 +115,10 @@ function search(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayWeatherCondition);
 }
-let citySearched = "";
-search("New York");
+
 function displayWeatherConditionInFahrenheit(response) {
+    let citySearched = document.querySelector("#currentlocation").value;
+    document.querySelector("#city").innerHTML = citySearched;
   document.querySelector("#currentTemper").innerHTML = Math.round(
     response.data.main.temp
   );
@@ -116,9 +126,13 @@ function displayWeatherConditionInFahrenheit(response) {
   document.querySelector("#windSpeed").innerHTML = response.data.wind.speed;
   document.querySelector("#degreeUnits").innerHTML = `°F`;
   document.querySelector("#windUnits").innerHTML = `mph`;
+    let weatherIcon = document.querySelector("#icon");
+  weatherIcon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
+
 }
 function searchForCityInFahrenheit(event) {
   event.preventDefault();
+  let citySearched = document.querySelector("#currentlocation").value;
   let apiKey = `0ceb0fe04d38447f14a2f5f039cc2bdf`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${citySearched}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayWeatherConditionInFahrenheit);
@@ -129,3 +143,5 @@ searchWeatherConditionsFahrenheit.addEventListener(
   "click",
   searchForCityInFahrenheit
 );
+let citySearched = "";
+search("New York");
