@@ -56,7 +56,7 @@ document.querySelector("#city").innerHTML = response.data.name;
     response.data.main.temp
   );
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
-  document.querySelector("#windSpeed").innerHTML = response.data.wind.speed;
+  document.querySelector("#windSpeed").innerHTML = Math.round(response.data.wind.speed);
   document.querySelector("#degreeUnits").innerHTML = `°C`;
   document.querySelector("#windUnits").innerHTML = `m/s`;
     let weatherIcon = document.querySelector("#icon");
@@ -84,8 +84,8 @@ function displayWeatherCondition(response) {
   document.querySelector("#windUnits").innerHTML = `mph`;
   document.querySelector("#currentWeatherDescription").innerHTML =
     response.data.weather[0].description;
-  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
-  document.querySelector("#windSpeed").innerHTML = response.data.wind.speed;
+  document.querySelector("#humidity").innerHTML = Math.round(response.data.main.humidity);
+  document.querySelector("#windSpeed").innerHTML = Math.round(response.data.wind.speed);
 
   let weatherIcon = document.querySelector("#icon");
   weatherIcon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
@@ -126,8 +126,8 @@ function displayWeatherConditionInFahrenheit(response) {
   document.querySelector("#currentTemper").innerHTML = Math.round(
     response.data.main.temp
   );
-  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
-  document.querySelector("#windSpeed").innerHTML = response.data.wind.speed;
+  document.querySelector("#humidity").innerHTML = Math.round(response.data.main.humidity);
+  document.querySelector("#windSpeed").innerHTML = Math.round(response.data.wind.speed);
   document.querySelector("#degreeUnits").innerHTML = `°F`;
   document.querySelector("#windUnits").innerHTML = `mph`;
     let weatherIcon = document.querySelector("#icon");
