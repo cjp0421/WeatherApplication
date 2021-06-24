@@ -55,11 +55,13 @@ document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#currentTemper").innerHTML = Math.round(
     response.data.main.temp
   );
+
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#windSpeed").innerHTML = Math.round(response.data.wind.speed);
   document.querySelector("#degreeUnits").innerHTML = `°C`;
   document.querySelector("#windUnits").innerHTML = `m/s`;
     let weatherIcon = document.querySelector("#icon");
+weatherIcon.setAttribute("alt", response.data.weather[0].description);
   weatherIcon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
   document.querySelector("#currentWeatherDescription").innerHTML =
     response.data.weather[0].description;
@@ -121,7 +123,6 @@ function search(city) {
 function displayWeatherConditionInFahrenheit(response) {
      document.querySelector("#currentWeatherDescription").innerHTML =
     response.data.weather[0].description;
-    
   let citySearched = document.querySelector("#currentlocation").value;
     document.querySelector("#city").innerHTML = citySearched;
   document.querySelector("#currentTemper").innerHTML = Math.round(
