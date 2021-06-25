@@ -38,25 +38,26 @@
       <button id="currentLocationButton" type="button" class="btn checkLocation">Get Weather at Current Location</button>
       <br/>
       <h5>OR</h5>
-      <form id="search-form">
-        <div class="mb-3">
-          <label for="currentLocationWeather" class="form-label" 
+      
+          <div class="mb-3">
+            <form id="search-form">
+            <label for="currentLocationWeather" class="form-label" 
             >Enter City</label>
-          <input
+            <input
             type="text"
             class="form-control"
             id="currentlocation"
             placeholder="St. Louis"
-          />
-          <br />
-          <button id="weatherButton" type="submit" class="btn checkWeather">Check Weather in Fahrenheit</button>
-          <br/>
-          <button id="celsiusWeatherButton" type="button" class="btn">Check Weather in Celsius</button>
-          <br />
-        </form>
-
+            />
+            <br />
+           <button id="weatherButton" type="submit" class="btn checkWeather">Check Weather in Fahrenheit</button>
+            <br/>
+            <button id="celsiusWeatherButton" type="button" class="btn">Check Weather in Celsius</button>
+            <br />
+           </form>
+          </div>
         </div>
-        </div>
+      
         <div class="column forecast">
             <div class="col-md-6 col-sm-10 card forecastCard">
                 <img id="weatherVane" src="src/media/weathervane.jpg" class="card-img-top" alt="weathervane in front of blue sky">
@@ -80,6 +81,9 @@
           </div>
         </div>
           </div>
+        </div>
+
+
           <div id="temperaturesOfTheWeek" class="row col-12">
           <div class="col-xs-12 col-sm-12 col-md-5 col-lg-3">
             <p class="card-body">
@@ -105,8 +109,8 @@
             <p class="card-body"><i class="fas fa-sun"></i> Thursday <span id="dayFour">21°F</span></p>
           </div>
         </div>
-        </div>
-      </form>
+        
+    
     </div>
     <br/>
     <br/>
