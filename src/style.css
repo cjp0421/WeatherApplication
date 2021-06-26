@@ -199,3 +199,12 @@ border-radius: 50px 50px 50px 50px / 40px 40px 40px 40px;
   margin: 0 auto;
 }
 
+#dayOneCardImg {
+  background-color:rgba(197, 147, 53, 0.3);
+
+}
+
+#dayOneCardFull, #dayTwoCardFull, #dayThreeCardFull, #dayFourCardFull {
+  background-color:rgba(16, 173, 194, 0.5);
+  width: 45%;
+}
