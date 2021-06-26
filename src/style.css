@@ -1,5 +1,5 @@
 body {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   display: flex;
   flex-flow: row wrap;
@@ -34,6 +34,7 @@ p {
   font-weight: 800;
   background-color: rgba(197, 147, 53, 0.7);
   transition: 200ms ease-in-out;
+  margin: 0 auto;
 }
 
 p:hover {
@@ -63,7 +64,7 @@ label, h5 {
 
 .card-body {
   position: relative;
-  display: block;
+align-content: center;
   justify-content: center;
   align-items: center;
   color: rgb(13, 134, 150);
@@ -71,8 +72,8 @@ label, h5 {
   box-shadow: 0px 10px 13px -7px #000000,
     -1px 13px 11px 12px rgba(0, 0, 0, 0.41);
   border: solid 1px rgba(94, 48, 48, 0.473);
+  margin: 0 auto;
 
-  margin: 2%;
 }
 
 .currentTemp {
@@ -135,14 +136,6 @@ label, h5 {
   z-index: -1;
 }
 
-#temperaturesOfTheWeek {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  width: 95%;
-
-}
-
 #mainheader {
   position: absolute;
   display: block;
@@ -184,13 +177,16 @@ border-radius: 50px 50px 50px 50px / 40px 40px 40px 40px;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  width: 95%;
+  justify-items: center;
+  align-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 
 #currentWeatherDescription, #humidity, #windSpeed, #city {
   margin: 2%;
-  width: 100%;
+  width: 90%;
   text-transform: capitalize;
 }
 
@@ -199,12 +195,18 @@ border-radius: 50px 50px 50px 50px / 40px 40px 40px 40px;
   margin: 0 auto;
 }
 
-#dayOneCardImg {
-  background-color:rgba(197, 147, 53, 0.3);
 
-}
 
 #dayOneCardFull, #dayTwoCardFull, #dayThreeCardFull, #dayFourCardFull {
   background-color:rgba(16, 173, 194, 0.5);
   width: 45%;
+  margin: 0 auto;
+}
+
+#forecastContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
