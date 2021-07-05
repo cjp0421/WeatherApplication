@@ -23,7 +23,7 @@
       <video autoplay muted id="myVideo" controls>
           <source src="src/media/boyinwild.mp4" type="video/mp4">
         </video>
-        
+  <div id="bigWrapper">
     <header id="mainheader" >
       <h1 class="column d-none d-sm-block" > Weather <br/> Where You Are</h1>
     </header>
@@ -60,103 +60,36 @@
       
         <div class="column forecast">
             <div class="col-md-6 col-sm-10 card forecastCard">
-                <img id="weatherVane" src="src\media\animal-2022469_1280.png" class="card-img-top" alt="black weather vane">
+                  <img id="weatherVane" src="src\media\animal-2022469_1280.png" class="card-img-top" alt="black weather vane">
                 <div class="card-body">
-          <h2 class="card-title col-12 cardText">
-            Current Conditions
-          </h2>
-          <div class="col col-4" id="currentConditions"> <img src="" id="icon" />
-            <p class="col-10 card-header" id="currentWeatherDescription">
-               Weather Description will appear here.
-            </p> 
-            <p class="col-10 card-header">
-              <i class="fas fa-wind"></i>
-               Wind Speed:<span id="windSpeed"></span><span id="windUnits">meters/second</span>
-            </p>
-            <p class="col-10 card-header">
-             <i class="fas fa-water"></i>
-              Humidity: <span id="humidity"></span>%
-            </p>
-
-          </div>
+                   <h2 class="card-title col-12 cardText">Current Conditions</h2>
+                    <div class="col col-4" id="currentConditions"> <img src="" id="icon" />
+                      <p class="col-10 card-header" id="currentWeatherDescription">
+                          Weather Description will appear here.
+                      </p> 
+                      <p class="col-10 card-header">
+                        <i class="fas fa-wind"></i>
+                        Wind Speed:<span id="windSpeed"></span><span id="windUnits">meters/second</span>
+                      </p>
+                      <p class="col-10 card-header">
+                        <i class="fas fa-water"></i>
+                        Humidity: <span id="humidity"></span>%
+                      </p>
+                    </div>
+                 </div>
+              </div>
         </div>
+            
+  
+          <div class="col" id="forecastWrap">
           </div>
+        <br/>
+        <br/>
+ 
+        <div class="footer">
+           <script src="src\copyofindex.js"></script>
+          <a id="repositoryLink" href="https://github.com/cjp0421/WeatherApplication.git">Link to GitHub Repository for this project.</a>
         </div>
-
-
-<div class="card" style="width: 18rem;" id="dayOneCardFull">
-  <img src="..." class="card-img-top cardImg" alt="..." id="#dayOneCardImg">
-  <div class="card-body">
-    <h5 class="card-title dayName" id="dayOneName">Day One</h5>
-    <p class="card-text"><span id="highTempOne">High Temp</span> | <span id="lowTempOne">Low Temp</span></p>
-  </div>
-
-  <div class="card-body">
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
-</div>
-
-<div class="card" style="width: 18rem;" id="dayTwoCardFull">
-  <img src="..." class="card-img-top cardImg" alt="..." id="#dayTwoCardImg">
-  <div class="card-body">
-    <h5 class="card-title dayName" id="dayTwoName">Day Two</h5>
-    <p class="card-text"><span id="highTempTwo">High Temp</span> | <span id="lowTempTwo">Low Temp</span></p>
-  </div>
-
-  <div class="card-body">
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
-</div>
-
-<div class="card" style="width: 18rem;" id="dayThreeCardFull">
-  <img src="..." class="card-img-top cardImg" alt="..." id="#dayThreeCardImg">
-  <div class="card-body">
-    <h5 class="card-title dayName" id="dayThreeName">Day Three</h5>
-    <p class="card-text"><span id="highTempThree">High Temp</span> | <span id="lowTempThree">Low Temp</span></p>
-  </div>
-
-  <div class="card-body">
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
-</div>
-
-<div class="card dayName" style="width: 18rem;" id="dayFourCardFull">
-  <img src="..." class="card-img-top cardImg" alt="..." id="#dayFourCardImg">
-  <div class="card-body">
-    <h5 class="card-title" id="dayFourName">Day Four</h5>
-    <p class="card-text"><span id="highTempFour">High Temp</span> | <span id="lowTempFour">Low Temp</span></p>
-  </div>
-
-  <div class="card-body">
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
-</div>
-
-<div class="card dayName" style="width: 18rem;" id="dayFiveCardFull">
-  <img src="..." class="card-img-top cardImg" alt="..." id="#dayFiveCardImg">
-  <div class="card-body">
-    <h5 class="card-title" id="dayFiveName">Day Five</h5>
-    <p class="card-text"><span id="highTempFive">High Temp</span> | <span id="lowTempFive">Low Temp</span></p>
-  </div>
-
-  <div class="card-body">
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
-</div>
-
     </div>
-    </div>
-    <br/>
-    <br/>
-    <div class="footer">
-    <script src="src\index.js"></script>
-    <a id="repositoryLink" href="https://github.com/cjp0421/WeatherApplication.git">Link to GitHub Repository for this project.</a>
-    </div>
-    
 </body>
 </html>

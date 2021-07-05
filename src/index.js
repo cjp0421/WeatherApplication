@@ -48,6 +48,56 @@ time.innerHTML = currentTime;
 let dateOfToday = document.querySelector("#todaysDate");
 console.log(dateOfToday);
 
+//feature: five day forecast - not currently in other js file
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecastWrap");
+  let forecastHTML = `<div class="row" style="display='flex'">`;
+  forecastHTML = forecastHTML + 
+   
+      `
+      <div class="col-3">
+        <div class="card" style="width: 16rem;" id="dayOneCardFull">
+            <img src="..." class="card-img-top cardImg" alt="..." id="#dayOneCardImg">
+          <div class="card-body">
+            <h5 class="card-title dayName" id="dayOneName">Day One</h5>
+              <p class="card-text"><span id="highTempOne">High Temp</span> | <span id="lowTempOne">Low Temp</span></p>
+          </div>
+
+        <div class="card-body">
+          <a href="#mainheader" class="card-link">Top of Page</a>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+      </div>
+      </div>`;
+
+      forecastHTML = forecastHTML + `</div>`;
+ forecastElement.innerHTML = forecastHTML;
+
+  forecastHTML = forecastHTML + 
+   
+      `
+      <div class="col-3">
+        <div class="card" style="width: 16rem;" id="dayOneCardFull">
+            <img src="..." class="card-img-top cardImg" alt="..." id="#dayOneCardImg">
+          <div class="card-body">
+            <h5 class="card-title dayName" id="dayOneName">Day One</h5>
+              <p class="card-text"><span id="highTempOne">High Temp</span> | <span id="lowTempOne">Low Temp</span></p>
+          </div>
+
+        <div class="card-body">
+          <a href="#mainheader" class="card-link">Top of Page</a>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+      </div>
+      </div>`;
+
+      forecastHTML = forecastHTML + `</div>`;
+ forecastElement.innerHTML = forecastHTML;
+
+ 
+
+}
+
 //feature: puts city entered into search bar as the h1 header on
 //on Check Weather button click
 function displayWeatherConditionInCelsius(response) {
@@ -152,3 +202,4 @@ searchWeatherConditionsFahrenheit.addEventListener(
 );
 let citySearched = null;
 search("New York");
+displayForecast();
