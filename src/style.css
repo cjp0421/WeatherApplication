@@ -133,6 +133,13 @@ align-content: center;
   padding: 3%;
 }
 
+#bigWrapper {
+  position:relative;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 #dayOneCardImg, 
 #dayTwoCardImg, 
 #dayThreeCardImg, 
@@ -153,8 +160,8 @@ align-content: center;
 #mainheader {
   position: absolute;
   display: block;
-  top: 1.5%;
-  left: 3%;
+  top: 1%;
+  left: 2%;
   width: 30%;
   opacity: 1;
   z-index: 1;
@@ -194,9 +201,8 @@ border-radius: 50px 50px 50px 50px / 40px 40px 40px 40px;
   justify-items: center;
   align-content: center;
   align-items: center;
-  width: 100%;
+  width: 90%;
 }
-
 
 #currentWeatherDescription, #humidity, #windSpeed, #city {
   margin: 2%;
@@ -212,17 +218,36 @@ border-radius: 50px 50px 50px 50px / 40px 40px 40px 40px;
 
 
 #dayOneCardFull, #dayTwoCardFull, #dayThreeCardFull, #dayFourCardFull, #dayFiveCardFull {
+  font-size: small;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   background-color:rgba(16, 173, 194, 0.5);
-  width: 45%;
-  margin: 0 auto;
-  margin-bottom: 3%;
+  width: 100%;
+  margin: 3%;
 }
 
 #forecastContainer {
   position: relative;
   display: flex;
+  flex-direction: row wrap;
+  align-items: center;
+  text-align: center;
+  background-color:rgba(16, 173, 194, 0.5);
+}
+
+#forecastWrap {
+  position: relative;
+  display: flex;
   flex-direction: row;
   align-items: center;
   text-align: center;
-    background-color:rgba(16, 173, 194, 0.5);
+
+}
+
+.dayName {
+  background-color: rgba(255, 255, 255, 0.7);
+  width: 100%;
 }
