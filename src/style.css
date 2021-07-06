@@ -106,14 +106,14 @@ align-content: center;
 }
 
 .forecastCard {
-  display: block;
+  display: flex;
   justify-content: center;
   align-content: center;
   margin: 0 auto;
   text-align: center;
   font-weight: 900;
   margin-bottom: 2%;
-  width: 79%;
+  width: 50%;
   background-color: rgba(197, 147, 53, 0.3);
 }
 
@@ -221,8 +221,6 @@ border-radius: 50px 50px 50px 50px / 40px 40px 40px 40px;
   margin: 0 auto;
 }
 
-
-
 #dayOneCardFull {
   font-size: small;
   position: relative;
@@ -232,14 +230,17 @@ border-radius: 50px 50px 50px 50px / 40px 40px 40px 40px;
   text-align: center;
   background-color:rgba(16, 173, 194, 0.5);
   width: 100%;
-  margin: 3%;
+  margin: 0 auto;
+}
+
+#detailsForecast {
+  position: relative;
+  display: flex;
 }
 
 #forecastWrap {
   position: relative;
   display: block;
-  flex-flow: row wrap;
-  align-items: center;
   text-align: center;
   margin: 0 auto;
 }
@@ -247,4 +248,8 @@ border-radius: 50px 50px 50px 50px / 40px 40px 40px 40px;
 .dayName {
   background-color: rgba(255, 255, 255, 0.7);
   width: 100%;
+}
+
+#weatherVane {
+  margin: 0 auto;
 }

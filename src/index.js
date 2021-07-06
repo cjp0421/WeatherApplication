@@ -149,6 +149,8 @@ let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
 let currentLocationButton = document.querySelector("#currentLocationButton");
 currentLocationButton.addEventListener("click", getCurrentLocation);
+
+
 function search(city) {
   
   let apiKey = `0ceb0fe04d38447f14a2f5f039cc2bdf`;
@@ -186,6 +188,9 @@ searchWeatherConditionsFahrenheit.addEventListener(
   "click",
   searchForCityInFahrenheit
 );
+
+
+
 let citySearched = null;
 search("New York");
 displayForecast();
