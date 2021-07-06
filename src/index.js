@@ -68,10 +68,7 @@ function displayForecast() {
               <p class="card-text"><span id="highTempOne">High Temp</span> | <span id="lowTempOne">Low Temp</span></p>
           </div>
 
-        <div class="card-body">
-          <a href="#mainheader" class="card-link">Top of Page</a>
-          <a href="#" class="card-link">Another link</a>
-        </div>
+
       </div>
       </div>`;
 
