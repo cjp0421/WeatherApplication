@@ -240,7 +240,8 @@ border-radius: 50px 50px 50px 50px / 40px 40px 40px 40px;
 
 #forecastWrap {
   position: relative;
-  display: block;
+  display: flex;
+  flex-direction: column;
   text-align: center;
   margin: 0 auto;
 }
