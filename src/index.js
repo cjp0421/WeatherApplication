@@ -9,6 +9,7 @@ let days = [
   "Friday",
   "Saturday",
 ];
+
 console.log(days);
 let months = [
   "January",
@@ -48,30 +49,42 @@ time.innerHTML = currentTime;
 let dateOfToday = document.querySelector("#todaysDate");
 console.log(dateOfToday);
 
+function formatDay(timestamp){
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun.","Mon.","Tues.","Wed.","Thurs.","Fri.","Sat."];
+  return days[day];
+}
+
 //feature: five day forecast - not currently in other js file
 function displayForecast(response) {
   console.log(response.data.daily);
+  let dailyForecast = response.data.daily;
+
   let forecastElement = document.querySelector("#forecastWrap");
-  let days = ["Day1", "Day2", "Day3", "Day4"];
+  
   let forecastHTML = `<div class="row">`;
 
-  days.forEach(function (day) {
+  dailyForecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
 
- 
   forecastHTML = forecastHTML + 
    
       `
       <div class="col-3">
         <div class="card" style="width: 16rem;" id="dayOneCardFull">
-            <img src="http://openweathermap.org/img/wn/50d@2x.png" class="card-img-top cardImg" alt="..." id="#dayOneCardImg">
+            <img 
+              src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" 
+              class="card-img-top cardImg" alt=""
+              id="#dayOneCardImg">
           <div class="card-body">
-            <h5 class="card-title dayName" id="dayOneName">${day}</h5>
-              <p class="card-text"><span id="highTempOne">High Temp</span> | <span id="lowTempOne">Low Temp</span></p>
+            <h5 class="card-title dayName" id="dayOneName">${formatDay(forecastDay.dt)}</h5>
+              <p class="card-text"><span id="highTempOne">${Math.round(forecastDay.temp.max)} °F</span> | <span id="lowTempOne"> ${Math.round(forecastDay.temp.min)} °F</span></p>
           </div>
 
       </div>
       `;
-  });
+   }});
       forecastHTML = forecastHTML + `</div>`;
  forecastElement.innerHTML = forecastHTML;
   }
