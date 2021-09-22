@@ -50,6 +50,7 @@ console.log(dateOfToday);
 
 //feature: five day forecast - not currently in other js file
 function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecastWrap");
   let days = ["Day1", "Day2", "Day3", "Day4"];
   let forecastHTML = `<div class="row">`;
@@ -62,24 +63,25 @@ function displayForecast(response) {
       `
       <div class="col-3">
         <div class="card" style="width: 16rem;" id="dayOneCardFull">
-            <img src="..." class="card-img-top cardImg" alt="..." id="#dayOneCardImg">
+            <img src="http://openweathermap.org/img/wn/50d@2x.png" class="card-img-top cardImg" alt="..." id="#dayOneCardImg">
           <div class="card-body">
             <h5 class="card-title dayName" id="dayOneName">${day}</h5>
               <p class="card-text"><span id="highTempOne">High Temp</span> | <span id="lowTempOne">Low Temp</span></p>
           </div>
-        </div>
-      </div>`;
 
+      </div>
+      `;
+  });
       forecastHTML = forecastHTML + `</div>`;
  forecastElement.innerHTML = forecastHTML;
-  })}
+  }
 
 //gets the forecast using two api calls from OpenWeather
 function getForecast(coordinates) {
   console.log(coordinates);
   let apiKey = "0ceb0fe04d38447f14a2f5f039cc2bdf";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
-  axios.get(apiUrl).then(displayForecast);
+axios.get(apiUrl).then(displayForecast);
 }
 
 //feature: puts city entered into search bar as the h1 header on
@@ -99,6 +101,9 @@ weatherIcon.setAttribute("alt", response.data.weather[0].description);
   weatherIcon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
   document.querySelector("#currentWeatherDescription").innerHTML =
     response.data.weather[0].description;
+
+//city coordinates from name search from API already used
+getForecast(response.data.coord);
 
 }
 
@@ -126,7 +131,7 @@ function displayWeatherCondition(response) {
 
   let weatherIcon = document.querySelector("#icon");
   weatherIcon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
-
+getForecast(response.data.coord);
 }
 //
 function handleSubmit(event) {
@@ -173,7 +178,9 @@ function displayWeatherConditionInFahrenheit(response) {
   document.querySelector("#windUnits").innerHTML = `mph`;
     let weatherIcon = document.querySelector("#icon");
   weatherIcon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+getForecast(response.data.coord);
 }
+
 function searchForCityInFahrenheit(event) {
   event.preventDefault();
   let citySearched = document.querySelector("#currentlocation").value;
