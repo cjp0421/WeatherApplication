@@ -71,8 +71,8 @@ function displayForecast(response) {
   forecastHTML = forecastHTML + 
    
       `
-      <div class="col-3">
-        <div class="card" style="width: 16rem;" id="dayOneCardFull">
+      <div class="col">
+        <div class="card row-2" style="width: 16rem;" id="dayOneCardFull">
             <img 
               src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" 
               class="card-img-top cardImg" alt=""

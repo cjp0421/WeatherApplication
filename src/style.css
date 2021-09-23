@@ -234,7 +234,7 @@ label, h5 {
   font-size: small;
   position: relative;
   display: flex;
-  flex-direction: row;
+  flex-flow: row;
   text-align: center;
   background-color:rgba(16, 173, 194, 0.5);
   width: 100%;
@@ -243,7 +243,8 @@ label, h5 {
 
 #detailsForecast {
   position: relative;
-  display: block;
+  display: flex;
+  flex-flow:row;
 }
 
 #forecastWrap {
