@@ -82,7 +82,7 @@ function displayForecast(response) {
               <p class="card-text"><span id="highTempOne">${Math.round(forecastDay.temp.max)} °F</span> | <span id="lowTempOne"> ${Math.round(forecastDay.temp.min)} °F</span></p>
           </div>
 
-      </div>
+  
       `;
    }});
       forecastHTML = forecastHTML + `</div>`;
