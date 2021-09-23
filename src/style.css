@@ -238,18 +238,21 @@ label, h5 {
   text-align: center;
   background-color:rgba(16, 173, 194, 0.5);
   width: 100%;
-  margin: 0 auto;
+  margin: 2%;
+ 
 }
 
 #detailsForecast {
   position: relative;
   display: flex;
-  flex-flow:row;
+
 }
 
-#forecastWrap {
-  position: relative;
-  display: inline-flex;
+#forecastContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 #repositoryLink {

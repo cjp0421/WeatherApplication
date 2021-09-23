@@ -72,7 +72,7 @@ function displayForecast(response) {
    
       `
       <div class="col">
-        <div class="card row-2" style="width: 16rem;" id="dayOneCardFull">
+        <div class="card col-2" style="width: 14rem;" id="dayOneCardFull">
             <img 
               src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" 
               class="card-img-top cardImg" alt=""
@@ -82,7 +82,7 @@ function displayForecast(response) {
               <p class="card-text"><span id="highTempOne">${Math.round(forecastDay.temp.max)} °F</span> | <span id="lowTempOne"> ${Math.round(forecastDay.temp.min)} °F</span></p>
           </div>
 
-      </div>
+ 
       `;
    }});
       forecastHTML = forecastHTML + `</div>`;
