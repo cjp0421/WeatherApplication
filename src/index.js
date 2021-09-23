@@ -63,7 +63,7 @@ function displayForecast(response) {
 
   let forecastElement = document.querySelector("#forecastWrap");
   
-  let forecastHTML = `<div class="row">`;
+  let forecastHTML = `<div class="col">`;
 
   dailyForecast.forEach(function (forecastDay, index) {
     if (index < 6) {
@@ -72,7 +72,7 @@ function displayForecast(response) {
    
       `
       <div class="col">
-        <div class="card row-2" style="width: 16rem;" id="dayOneCardFull">
+        <div class="card col-2" style="width: 16rem;" id="dayOneCardFull">
             <img 
               src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" 
               class="card-img-top cardImg" alt=""
