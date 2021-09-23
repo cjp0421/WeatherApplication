@@ -77,7 +77,8 @@ label, h5 {
 
 .container {
   position:relative;
-  display:block;
+  display:flex;
+  flex-direction: row;
   margin: 0;
   padding: 1%;
 }
@@ -245,13 +246,13 @@ label, h5 {
 #detailsForecast {
   position: relative;
   display: flex;
-  flex-flow:row;
+  flex-flow:row wrap;
 }
 
 #forecastWrap {
   position: relative;
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column wrap;
   justify-content: space-around;
 }
 
