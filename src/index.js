@@ -54,7 +54,10 @@ function formatDay(timestamp){
   let day = date.getDay();
   let days = ["Sun.","Mon.","Tues.","Wed.","Thurs.","Fri.","Sat."];
   return days[day];
+
 }
+
+
 
 //feature: five day forecast - not currently in other js file
 function displayForecast(response) {
