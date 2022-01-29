@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Weather Where You Are</title>
+    <title>Weather App</title>
     <meta charset="UTF-8" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -14,6 +14,11 @@
       integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
       crossorigin="anonymous"
     />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link href="src/style.css" rel="stylesheet" />
     <script
@@ -22,21 +27,18 @@
     ></script>
   </head>
 
-  <body class="container">
+  <body>
     <video autoplay muted id="myVideo" controls>
       <source src="src/media/boyinwild.mp4" type="video/mp4" />
     </video>
-    <div id="bigWrapper">
+    <div>
       <header id="mainheader">
         <h1 class="column d-none d-sm-block">
-          Weather <br />
+          Get the Weather <br />
           Where You Are
         </h1>
       </header>
-      <div id="currentLocationWeather" class="col-7 card currentTemp">
-        <div class="currentIcon">
-          <i class="fas fa-cloud-sun"></i>
-        </div>
+      <div id="currentLocationWeather" class="card currentTemp">
         <h2 id="city">St. Louis</h2>
         <h3 id="todaysDate">Refresh for Today's Date</h3>
         <h3>
@@ -46,7 +48,7 @@
         <button
           id="currentLocationButton"
           type="button"
-          class="btn checkLocation"
+          class="btn checkLocation mt-5"
         >
           Get Weather at Current Location
         </button>
@@ -65,65 +67,79 @@
               placeholder="St. Louis"
             />
             <br />
-            <button id="weatherButton" type="submit" class="btn checkWeather">
-              Check Weather in Fahrenheit
-            </button>
-            <br />
-            <button id="celsiusWeatherButton" type="button" class="btn">
-              Check Weather in Celsius
-            </button>
+            <div class="container">
+              <div class="row d-flex justify-content-evenly">
+                <button
+                  id="weatherButton"
+                  type="submit"
+                  class="col-md-5 checkWeather btn mt-4"
+                >
+                  Check Weather in Fahrenheit
+                </button>
+                <br />
+                <button
+                  id="celsiusWeatherButton"
+                  type="button"
+                  class="col-md-5 btn checkWeather mt-4"
+                >
+                  Check Weather in Celsius
+                </button>
+              </div>
+            </div>
             <br />
           </form>
         </div>
       </div>
-      <div id="detailsForecast">
-        <div class="column forecast">
-          <div class="col-10 card forecastCard">
+      <div id="detailsForecast" class="">
+        <div class="container forecast">
+          <div class="row card forecastCard center-stuff">
             <img
               id="weatherVane"
               src="src\media\animal-2022469_1280.png"
-              class="card-img-top"
+              class="card-img-top hide-mobile"
               alt="black weather vane"
             />
-            <div class="card-body">
-              <h2 class="card-title col-12 cardText">Current Conditions</h2>
-              <div class="col col-12" id="currentConditions">
+            <div class="col-12 card-body">
+              <h2 class="col-12 card-title cardText">Current Conditions</h2>
+              <div class="" id="currentConditions">
                 <img src="" id="icon" />
-                <p class="col-5 card-header" id="currentWeatherDescription">
-                  Weather Description will appear here.
+                <p class="card-header" id="currentWeatherDescription">
+                  The weather description will appear here.
                 </p>
-                <p class="col-12 card-header">
-                  <i class="fas fa-wind"></i>
-                  Wind Speed:<span id="windSpeed"></span
-                  ><span id="windUnits">meters/second</span>
-                </p>
-                <p class="col-12 card-header">
-                  <i class="fas fa-water"></i>
-                  Humidity: <span id="humidity"></span>%
-                </p>
+                <div class="d-flex justify-content-evenly">
+                  <p class="col-sm-6">
+                    <i class="fas fa-wind"></i>
+                    Wind Speed:<span id="windSpeed"></span
+                    ><span id="windUnits">meters/second</span>
+                  </p>
+                  <p class="col-sm-6">
+                    <i class="fas fa-water"></i>
+                    Humidity: <span id="humidity"></span>%
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-12" id="outerForecastWrap">
-        <div class="col-12" id="forecastWrap"></div>
+
+      <div class="mt-3" id="outerForecastWrap">
+        <div class="container mt-2" id="forecastWrap"></div>
       </div>
+
       <br />
       <br />
 
       <div class="footer">
         <script src="src\index.js"></script>
         <a
-          id="repositoryLink"
+          class="footer-links"
           href="https://github.com/cjp0421/WeatherApplication.git"
           >Link to GitHub Repository for this project.</a
         >
-        <div class="card-body">
-          <a href="#mainheader" id="toTopOfPage" class="card-link"
-            >Top of Page</a
-          >
-        </div>
+        <a href="#mainheader" id="toTopOfPage" class="footer-links"
+          >Top of Page</a
+        >
       </div>
     </div>
   </body>
