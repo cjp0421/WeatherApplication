@@ -164,6 +164,7 @@ a.footer-links:hover {
 #currentLocationWeather {
   position: relative;
   display: block;
+  width: fit-content;
 }
 
 #currentConditions {
@@ -217,8 +218,37 @@ a.footer-links:hover {
   display: block;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 547px) {
   .hide-mobile {
     display: none;
+  }
+}
+
+@media (max-width: 775px) {
+  .hide-mobile {
+    display: none;
+  }
+  #dayOneCardFull {
+    width: 75%;
+    display: block;
+    margin: 0 auto;
+    margin-top: 1%;
+  }
+
+  #dayOneCardFull > img {
+    width: 65%;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 900px) {
+  #currentLocationWeather {
+    width: 57.5%;
+  }
+  #detailsForecast {
+    width: 60%;
+    display: block;
+    margin: 0 auto;
   }
 }
