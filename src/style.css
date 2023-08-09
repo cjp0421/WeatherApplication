@@ -111,6 +111,7 @@ a.footer-links:hover {
   width: 40%;
   padding: 1%;
 }
+
 .dayName {
   background-color: rgba(255, 255, 255, 0.7);
   width: 100%;
@@ -125,7 +126,7 @@ a.footer-links:hover {
   position: fixed;
   top: 0;
   left: 0;
-  height: vh100;
+  height: 100vh;
   z-index: -1;
 }
 
@@ -134,7 +135,7 @@ a.footer-links:hover {
   display: block;
   top: 0.25%;
   left: 0.25%;
-  width: 30%;
+  width: 28%;
   opacity: 1;
   z-index: 1;
 }
@@ -204,6 +205,7 @@ a.footer-links:hover {
   font-size: small;
   background-color: rgba(16, 173, 194, 0.5);
 }
+
 #weatherVane {
   margin: 0 auto;
 }
@@ -228,6 +230,7 @@ a.footer-links:hover {
   .hide-mobile {
     display: none;
   }
+
   #dayOneCardFull {
     width: 75%;
     display: block;
@@ -235,7 +238,7 @@ a.footer-links:hover {
     margin-top: 1%;
   }
 
-  #dayOneCardFull > img {
+  #dayOneCardFull>img {
     width: 65%;
     display: block;
     margin: 0 auto;
@@ -246,6 +249,7 @@ a.footer-links:hover {
   #currentLocationWeather {
     width: 57.5%;
   }
+
   #detailsForecast {
     width: 60%;
     display: block;
